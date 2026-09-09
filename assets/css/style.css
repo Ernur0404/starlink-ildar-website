@@ -128,7 +128,10 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
   letter-spacing:.09em; text-transform:uppercase; opacity:.62;
 }
 
-.nav{ display:flex; align-items:center; gap:30px; margin-left:auto; }
+/* Логотипа в шапке пока нет, поэтому меню начинается слева,
+   а язык с кнопкой прижаты вправо (margin-left:auto у .hdr__side).
+   Когда логотип появится — меню само отойдёт правее. */
+.nav{ display:flex; align-items:center; gap:30px; }
 .nav a{
   color:rgba(255,255,255,.82); font-size:15px; font-weight:500;
   white-space:nowrap; /* иначе русские подписи ломаются на две строки */
@@ -136,7 +139,7 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
 }
 .nav a:hover{ color:#fff; }
 
-.hdr__side{ display:flex; align-items:center; gap:16px; flex:none; }
+.hdr__side{ display:flex; align-items:center; gap:16px; flex:none; margin-left:auto; }
 
 .lang{ display:flex; align-items:center; gap:2px; padding:3px; background:rgba(255,255,255,.12); border-radius:var(--r-pill); }
 .lang a{
@@ -485,7 +488,9 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
   /* в строке шапки остаются логотип, переключатель языка и бургер —
      ужимаем отступы, чтобы всё поместилось на узких экранах */
   .hdr__in{ gap:12px; }
-  .hdr__side{ margin-left:auto; }
+  /* логотипа нет: переключатель языка уходит влево, бургер остаётся справа —
+     иначе оба прижались бы к правому краю, а слева зияла бы пустота */
+  .hdr__side{ margin-left:0; margin-right:auto; }
   .hdr__side .btn{ display:none; }
   .burger{ display:block; order:3; flex:none; margin-right:-10px; }
   .hdr:not(.is-stuck){ background:rgba(8,19,31,.82); backdrop-filter:blur(10px); }
