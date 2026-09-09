@@ -35,7 +35,14 @@
   --gap:         28px;
   --pad-y:       92px;
 
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  /* Calibri — шрифт Microsoft: он есть на Windows, но его нет на iPhone,
+     Android и Mac, и вшить его в сайт нельзя по лицензии. Поэтому цепочка:
+       Calibri — Windows,
+       Carlito — свободный клон Calibri с той же метрикой (Linux),
+       Inter   — подгружается с Google Fonts для всех остальных,
+       дальше  — системные шрифты на крайний случай.
+     Кириллицу и казахские буквы (ә ғ қ ң ө ұ ү һ і) поддерживают все три. */
+  --font: Calibri, Carlito, 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
 }
 
 /* --- 2. Сброс ---------------------------------------------------------- */
