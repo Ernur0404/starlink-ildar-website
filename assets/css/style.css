@@ -572,6 +572,9 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
      плашка 88x33 и иконка 70x70 выглядели тяжелее самого заголовка.
      Уменьшаем пропорционально. */
   .eyebrow{ margin-bottom:10px; padding:4px 11px; font-size:11px; letter-spacing:.05em; }
+  /* Описания в «Неліктен Starlink?» шли вровень с подписями (17px против 15.5px)
+     и перетягивали внимание на себя. Делаем их явно второстепенными. */
+  .feat p{ font-size:14px; line-height:1.55; }
   .card__ico{ width:42px; height:42px; margin-bottom:16px; border-radius:11px; }
   .card__ico svg{ width:21px; height:21px; }
   .feat__ico{ width:50px; height:50px; margin-bottom:16px; border-radius:14px; }
