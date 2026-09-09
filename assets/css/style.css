@@ -590,6 +590,12 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
      в обеих секциях сразу, «Мәселе» и «Неліктен Starlink?». */
   .card p,
   .feat p{ font-size:14px; line-height:1.55; }
+
+  /* Плитки «Кімдерге қажет» на узких экранах (320px) переносились в две строки:
+     из 284px ширины 48px уходило в боковые поля. Ужимаем поля, иконку и зазор —
+     места под текст становится 216px вместо 193px, и всё встаёт в строку. */
+  .use{ padding:18px 16px; gap:10px; font-size:15px; }
+  .use svg{ width:24px; height:24px; }
   .card__ico{ width:42px; height:42px; margin-bottom:16px; border-radius:11px; }
   .card__ico svg{ width:21px; height:21px; }
   .feat__ico{ width:50px; height:50px; margin-bottom:16px; border-radius:14px; }
