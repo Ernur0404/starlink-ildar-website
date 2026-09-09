@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ernur0404.github.io/starlink-ildar-website/sitemap.xml

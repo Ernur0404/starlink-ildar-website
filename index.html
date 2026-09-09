@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starlink Қазақстан — Standard және Mini | Спутниктік интернет</title>
+<meta name="description" content="Starlink спутниктік интернеті: үйге, бизнеске, көлікке және шалғайдағы нысандарға. Қазақстан бойынша жеткізу, қосуға және баптауға көмек, 1 ай интернет сыйлық.">
+<meta name="theme-color" content="#08131f">
+
+<link rel="canonical" href="index.html">
+<link rel="alternate" hreflang="kk" href="index.html">
+<link rel="alternate" hreflang="ru" href="ru.html">
+<link rel="alternate" hreflang="x-default" href="index.html">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="kk_KZ">
+<meta property="og:title" content="Starlink Қазақстан — Standard және Mini">
+<meta property="og:description" content="Кәдімгі интернет жетпейтін жерде интернет. Қазақстан бойынша жеткізу, қосуға көмек, 1 ай сыйлық.">
+<meta property="og:url" content="https://ernur0404.github.io/starlink-ildar-website/index.html">
+<meta property="og:image" content="https://ernur0404.github.io/starlink-ildar-website/assets/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<!-- фон первого экрана грузим заранее: CSS-фоны браузер находит поздно -->
+<link rel="preload" as="image" href="assets/img/hero.jpg" media="(min-width: 761px)">
+<link rel="preload" as="image" href="assets/img/hero-mobile.jpg" media="(max-width: 760px)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     Набор иконок. Используется как <svg class="ico"><use href="#i-…"/></svg>
+     ============================================================ -->
+<svg class="sprite" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-dish" viewBox="0 0 24 24"><path d="M4 10a7.31 7.31 0 0 0 10 10Z"/><path d="m9 15 3-3"/><path d="M17 13a6 6 0 0 0-6-6"/><path d="M21 13A10 10 0 0 0 11 3"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-tools" viewBox="0 0 24 24"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M9 21v-6h6v6"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18.4 5.6C18.1 4.6 17.2 4 16.2 4H7.8c-1 0-1.9.6-2.2 1.6L4.5 11.1C3.7 11.3 3 12.1 3 13v3c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+  <symbol id="i-office" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></symbol>
+  <symbol id="i-speed" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+  <symbol id="i-signal" viewBox="0 0 24 24"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2"/></symbol>
+  <symbol id="i-tent" viewBox="0 0 24 24"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></symbol>
+  <symbol id="i-hat" viewBox="0 0 24 24"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><path d="M14 6a6 6 0 0 1 6 6v3"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></symbol>
+  <symbol id="i-warehouse" viewBox="0 0 24 24"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35a2 2 0 0 1 1.26-1.85l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect x="6" y="10" width="12" height="12"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><path d="m16 13 5.2 3.5a.5.5 0 0 0 .8-.4V7.9a.5.5 0 0 0-.8-.5L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.8 16.6a1 1 0 0 0 1.2-.3l.4-.5A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.5.4a1 1 0 0 0-.3 1.2 14 14 0 0 0 6.4 6.4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.23-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.07.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34m-5.42 7.4a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.89 9.89M20.52 3.45A11.87 11.87 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.94c0 2.1.55 4.15 1.59 5.95L0 24l6.3-1.65a11.9 11.9 0 0 0 5.74 1.46c6.58 0 11.95-5.36 11.95-11.95a11.9 11.9 0 0 0-3.47-8.41"/></symbol>
+
+  <!-- Флаги стран для поля телефона (упрощённые, 24x16) -->
+  <symbol id="fl-kz" viewBox="0 0 24 16"><rect width="24" height="16" fill="#00afca"/><circle cx="13" cy="7" r="3" fill="#fec50c"/><path d="M9.5 10.6c1-1.1 2.1-1.6 3.5-1.6s2.5.5 3.5 1.6" stroke="#fec50c" stroke-width=".9" fill="none" stroke-linecap="round"/><rect x="1.4" width="1.5" height="16" fill="#fec50c"/></symbol>
+  <symbol id="fl-ru" viewBox="0 0 24 16"><rect width="24" height="16" fill="#fff"/><rect y="5.33" width="24" height="5.34" fill="#0039a6"/><rect y="10.67" width="24" height="5.33" fill="#d52b1e"/></symbol>
+  <symbol id="fl-uz" viewBox="0 0 24 16"><rect width="24" height="16" fill="#0099b5"/><rect y="5.33" width="24" height="5.34" fill="#fff"/><rect y="10.67" width="24" height="5.33" fill="#1eb53a"/><rect y="5" width="24" height=".55" fill="#ce1126"/><rect y="10.45" width="24" height=".55" fill="#ce1126"/><circle cx="4.4" cy="2.6" r="1.7" fill="#fff"/><circle cx="5.3" cy="2.4" r="1.6" fill="#0099b5"/></symbol>
+  <symbol id="fl-kg" viewBox="0 0 24 16"><rect width="24" height="16" fill="#e8112d"/><circle cx="12" cy="8" r="3.2" fill="#ffef00"/><circle cx="12" cy="8" r="2" fill="none" stroke="#e8112d" stroke-width=".6"/></symbol>
+  <symbol id="fl-tj" viewBox="0 0 24 16"><rect width="24" height="16" fill="#cc0000"/><rect y="4.6" width="24" height="6.8" fill="#fff"/><rect y="11.4" width="24" height="4.6" fill="#006600"/><circle cx="12" cy="8" r="1.7" fill="#f8c300"/></symbol>
+  <symbol id="fl-tm" viewBox="0 0 24 16"><rect width="24" height="16" fill="#28ae66"/><rect x="3" width="3.4" height="16" fill="#c1272d"/><circle cx="14" cy="4.2" r="1.7" fill="#fff"/><circle cx="14.9" cy="4" r="1.6" fill="#28ae66"/></symbol>
+  <symbol id="fl-az" viewBox="0 0 24 16"><rect width="24" height="16" fill="#0092bc"/><rect y="5.33" width="24" height="5.34" fill="#e8112d"/><rect y="10.67" width="24" height="5.33" fill="#00af66"/><circle cx="10.8" cy="8" r="2.3" fill="#fff"/><circle cx="11.7" cy="8" r="2" fill="#e8112d"/></symbol>
+  <symbol id="fl-ge" viewBox="0 0 24 16"><rect width="24" height="16" fill="#fff"/><rect x="10" width="4" height="16" fill="#ff0000"/><rect y="6" width="24" height="4" fill="#ff0000"/><rect x="4" y="2" width="2.4" height=".9" fill="#ff0000"/><rect x="4.8" y="1.2" width=".9" height="2.4" fill="#ff0000"/><rect x="17.6" y="2" width="2.4" height=".9" fill="#ff0000"/><rect x="18.4" y="1.2" width=".9" height="2.4" fill="#ff0000"/></symbol>
+  <symbol id="fl-by" viewBox="0 0 24 16"><rect width="24" height="16" fill="#c8313e"/><rect y="10.67" width="24" height="5.33" fill="#4aa657"/><rect width="4.2" height="16" fill="#fff"/><path d="M1.2 1.6h1.8v1.8H1.2zM1.2 5.6h1.8v1.8H1.2zM1.2 9.6h1.8v1.8H1.2zM1.2 13.2h1.8V15H1.2z" fill="#c8313e"/></symbol>
+  <symbol id="fl-ua" viewBox="0 0 24 16"><rect width="24" height="16" fill="#005bbb"/><rect y="8" width="24" height="8" fill="#ffd500"/></symbol>
+  <symbol id="fl-mn" viewBox="0 0 24 16"><rect width="24" height="16" fill="#c4272f"/><rect x="8" width="8" height="16" fill="#015197"/><rect x="2.6" y="4.4" width="1.8" height="7.2" fill="#f9cf02"/><circle cx="3.5" cy="3" r="1.1" fill="#f9cf02"/></symbol>
+  <symbol id="fl-tr" viewBox="0 0 24 16"><rect width="24" height="16" fill="#e30a17"/><circle cx="9" cy="8" r="3.3" fill="#fff"/><circle cx="10.3" cy="8" r="2.7" fill="#e30a17"/><path d="m14.4 6.3.62 1.78 1.88.03-1.5 1.14.55 1.8-1.55-1.05-1.55 1.05.55-1.8-1.5-1.14 1.88-.03z" fill="#fff"/></symbol>
+  <symbol id="fl-cn" viewBox="0 0 24 16"><rect width="24" height="16" fill="#de2910"/><path d="m5 2.2.92 2.8 2.94.02-2.38 1.73.89 2.8L5 7.85 2.63 9.55l.89-2.8L1.14 5.02l2.94-.02z" fill="#ffde00"/><circle cx="9.8" cy="2" r=".75" fill="#ffde00"/><circle cx="11.4" cy="3.9" r=".75" fill="#ffde00"/><circle cx="11.4" cy="6.2" r=".75" fill="#ffde00"/><circle cx="9.8" cy="7.9" r=".75" fill="#ffde00"/></symbol>
+  <symbol id="fl-ae" viewBox="0 0 24 16"><rect width="24" height="16" fill="#fff"/><rect width="24" height="5.33" fill="#00732f"/><rect y="10.67" width="24" height="5.33" fill="#000"/><rect width="7" height="16" fill="#ff0000"/></symbol>
+  <symbol id="fl-de" viewBox="0 0 24 16"><rect width="24" height="16" fill="#000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.67" width="24" height="5.33" fill="#ffce00"/></symbol>
+  <symbol id="fl-us" viewBox="0 0 24 16"><rect width="24" height="16" fill="#fff"/><path d="M0 0h24v1.23H0zM0 2.46h24v1.23H0zM0 4.92h24v1.23H0zM0 7.38h24v1.24H0zM0 9.85h24v1.23H0zM0 12.31h24v1.23H0zM0 14.77h24v1.23H0z" fill="#b22234"/><rect width="10" height="8.62" fill="#3c3b6e"/></symbol>
+  <symbol id="i-caret" viewBox="0 0 10 6"><path d="M0 0h10L5 6z" fill="currentColor" stroke="none"/></symbol>
+</defs></svg>
+
+
+<!-- ================================ Шапка ================================ -->
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="logo" href="index.html">
+      <svg class="ico" width="31" height="31"><use href="#i-dish"/></svg>
+      <span><b>STARLINK KZ</b><span>Спутниктік интернет</span></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#problems">Неге керек</a>
+      <a href="#why">Неліктен Starlink</a>
+      <a href="#plans">Комплекттер</a>
+      <a href="#uses">Кімдерге қажет</a>
+      <a href="#contact">Байланыс</a>
+    </nav>
+
+    <div class="hdr__side">
+      <div class="lang">
+        <a href="index.html" aria-current="true" lang="kk">ҚАЗ</a>
+        <a href="ru.html" lang="ru">РУС</a>
+      </div>
+      <a class="btn btn--primary btn--sm" href="#contact">Кеңес алу</a>
+    </div>
+
+    <button class="burger" type="button" aria-label="Мәзір" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================================= Hero ================================ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__in">
+      <h1>Starlink — кәдімгі интернет <em>жетпейтін жерде</em> интернет</h1>
+      <p class="hero__lead">Үйге, бизнеске, көлікке және шалғайдағы нысандарға арналған спутниктік интернет.</p>
+
+      <div class="hero__acts">
+        <a class="btn btn--primary btn--lg" href="#contact">
+          Кеңес алу
+          <svg class="ico" width="19" height="19"><use href="#i-arrow"/></svg>
+        </a>
+        <a class="btn btn--wa btn--lg" href="#" data-wa="general">
+          <svg class="ico ico--fill" width="19" height="19"><use href="#i-wa"/></svg>
+          WhatsApp арқылы жазу
+        </a>
+      </div>
+
+      <div class="hero__pills">
+        <div class="pill">
+          <svg class="ico"><use href="#i-truck"/></svg>
+          <p>Қазақстан бойынша жеткіземіз</p>
+        </div>
+        <div class="pill">
+          <svg class="ico"><use href="#i-tools"/></svg>
+          <p>Қосуға және баптауға көмектесеміз</p>
+        </div>
+        <div class="pill">
+          <svg class="ico"><use href="#i-gift"/></svg>
+          <p>1 ай интернет сыйлыққа</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== Проблемы =============================== -->
+<section class="section" id="problems">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Мәселе</span>
+      <h2>Кәдімгі интернет жұмыс істемеген кезде — Starlink көмектеседі</h2>
+    </div>
+
+    <div class="grid grid--4">
+      <article class="card rv">
+        <div class="card__ico"><svg class="ico"><use href="#i-home"/></svg></div>
+        <h3>Қала сыртында байланыс жоқ па?</h3>
+        <p>Дача, ауыл, ферма немесе шалғайдағы нысанда мобильді интернет нашар ұстай ма немесе мүлдем жоқ па? Starlink арқылы тұрақты интернетке қосылыңыз.</p>
+      </article>
+
+      <article class="card rv">
+        <div class="card__ico"><svg class="ico"><use href="#i-car"/></svg></div>
+        <h3>Жолда интернет керек пе?</h3>
+        <p>Автокөлік, кемпинг, экспедиция, трасса немесе саяхат кезінде интернеттен ажырамаңыз.</p>
+      </article>
+
+      <article class="card rv">
+        <div class="card__ico"><svg class="ico"><use href="#i-office"/></svg></div>
+        <h3>Бизнесіңіз интернетке тәуелді ме?</h3>
+        <p>CRM, касса, терминал, бейнебақылау, жұмыс чаттары және басқа жүйелер интернетсіз тоқтап қалмауы керек.</p>
+      </article>
+
+      <article class="card rv">
+        <div class="card__ico"><svg class="ico"><use href="#i-bolt"/></svg></div>
+        <h3>Интернетті тез іске қосқыңыз келе ме?</h3>
+        <p>Кабель тартуды, провайдерді немесе жақын маңдағы базалық станцияны күтудің қажеті жоқ.</p>
+      </article>
+    </div>
+
+    <div class="note rv">
+      <svg class="ico"><use href="#i-info"/></svg>
+      <p>Starlink үшін ең бастысы — <b>аспанның ашық көрінуі</b> және дұрыс орнату.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== Неліктен Starlink ========================= -->
+<section class="section section--tint" id="why">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Артықшылықтары</span>
+      <h2>Неліктен Starlink?</h2>
+    </div>
+
+    <div class="grid grid--4">
+      <article class="feat rv">
+        <div class="feat__ico"><svg class="ico"><use href="#i-globe"/></svg></div>
+        <h3>Интернетті кез келген жерде пайдаланыңыз</h3>
+        <p>Ауылда, далада, трассада, тауда немесе шалғайдағы нысанда.</p>
+      </article>
+
+      <article class="feat rv">
+        <div class="feat__ico"><svg class="ico"><use href="#i-speed"/></svg></div>
+        <h3>Жоғары жылдамдық</h3>
+        <p>Жұмыс істеуге, бейнеқоңырауға, фильм көруге және басқа онлайн қызметтерді пайдалануға мүмкіндік береді.</p>
+      </article>
+
+      <article class="feat rv">
+        <div class="feat__ico"><svg class="ico"><use href="#i-signal"/></svg></div>
+        <h3>Ұялы байланыс мұнарасына тәуелді емессіз</h3>
+        <p>Starlink интернетті спутник арқылы қабылдайды.</p>
+      </article>
+
+      <article class="feat rv">
+        <div class="feat__ico"><svg class="ico"><use href="#i-wrench"/></svg></div>
+        <h3>Жылдам орнату</h3>
+        <p>Құрылғыны дұрыс орналастырып, интернетке қосуға көмектесеміз.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== Комплекты ============================== -->
+<section class="section" id="plans">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Комплекттер</span>
+      <h2>Сізге қай Starlink керек?</h2>
+      <p class="lead">Екі модель бар — біреуі тұрақты нысанға, екіншісі жолға. Айырмашылығын төменнен қараңыз.</p>
+    </div>
+
+    <div class="plans">
+      <article class="plan rv">
+        <div class="plan__art">
+          <img src="assets/img/plan-standard.jpg" width="880" height="880" loading="lazy" decoding="async"
+               alt="Starlink Standard: үй шатырына мачтаға орнатылған антенна, түнгі ауыл">
+        </div>
+        <h3>Starlink Standard</h3>
+        <p class="plan__sub">Үйге, кеңсеге және тұрақты нысанға</p>
+        <div class="plan__price">
+          <b>350 000 ₸</b>
+          <i>Құрылғының бағасы</i>
+        </div>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg>Күнделікті пайдалануға арналған</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Үйге және кеңсеге қолайлы</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Жұмыс, бейне, байланыс үшін</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>1 ай интернет сыйлық</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Қосуға және баптауға көмектесеміз</li>
+        </ul>
+        <a class="btn btn--primary btn--card" href="#" data-wa="standard">Standard туралы кеңес алу</a>
+      </article>
+
+      <article class="plan rv">
+        <div class="plan__art plan__art--mini">
+          <img src="assets/img/plan-mini.jpg" width="880" height="880" loading="lazy" decoding="async"
+               alt="Starlink Mini: автокөліктің шатырына бекітілген ықшам панель">
+        </div>
+        <h3>Starlink Mini</h3>
+        <p class="plan__sub">Жолға, көлікке және саяхатқа</p>
+        <div class="plan__price">
+          <b>280 000 ₸</b>
+          <i>Құрылғының бағасы</i>
+        </div>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg>Ықшам өлшем</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Алып жүруге ыңғайлы</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Автокөлікке және саяхатқа қолайлы</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>Кемпингке және уақытша нысандарға ыңғайлы</li>
+          <li><svg class="ico"><use href="#i-check"/></svg>1 ай интернет сыйлық</li>
+        </ul>
+        <a class="btn btn--primary btn--card" href="#" data-wa="mini">Mini туралы кеңес алу</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ Кімдерге қажет =========================== -->
+<section class="section section--tint" id="uses">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Қолдану аясы</span>
+      <h2>Starlink кімдерге қажет?</h2>
+    </div>
+
+    <div class="uses">
+      <div class="use rv"><svg class="ico"><use href="#i-home"/></svg>Үй және саяжай</div>
+      <div class="use rv"><svg class="ico"><use href="#i-sprout"/></svg>Ферма және ауыл шаруашылығы</div>
+      <div class="use rv"><svg class="ico"><use href="#i-truck"/></svg>Жүк көлігі және автокөлік</div>
+      <div class="use rv"><svg class="ico"><use href="#i-tent"/></svg>Туризм және кемпинг</div>
+      <div class="use rv"><svg class="ico"><use href="#i-hat"/></svg>Құрылыс нысандары</div>
+      <div class="use rv"><svg class="ico"><use href="#i-factory"/></svg>Өндірістік объектілер</div>
+      <div class="use rv"><svg class="ico"><use href="#i-warehouse"/></svg>Вахталық қалашықтар</div>
+      <div class="use rv"><svg class="ico"><use href="#i-video"/></svg>Бейнебақылау жүйелері</div>
+      <div class="use rv"><svg class="ico"><use href="#i-office"/></svg>Бизнес және кеңсе</div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== Полоса-консультация ======================= -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__in rv">
+      <h2>Сізге қай модель сәйкес екенін білмейсіз бе?</h2>
+      <p>Еш проблема жоқ. Қай жерде пайдаланатыныңызды айтыңыз — біз сізге сәйкес Starlink моделін таңдауға көмектесеміз.</p>
+      <a class="btn btn--wa btn--lg" href="#" data-wa="general">
+        <svg class="ico ico--fill" width="19" height="19"><use href="#i-wa"/></svg>
+        Тегін кеңес алу
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ Форма ================================ -->
+<section class="section section--soft" id="contact">
+  <div class="wrap">
+    <div class="lead-grid">
+
+      <div class="lead-info rv">
+        <span class="eyebrow">Өтінім</span>
+        <h2>Starlink-ті қазір алыңыз</h2>
+        <p class="lead">Қазақстан бойынша жеткізу. Өтінім қалдырыңыз — жақын арада хабарласамыз.</p>
+        <ul>
+          <li><svg class="ico"><use href="#i-truck"/></svg>Қазақстан бойынша жеткіземіз</li>
+          <li><svg class="ico"><use href="#i-clock"/></svg>Өтінімге жедел жауап береміз</li>
+          <li><svg class="ico"><use href="#i-tools"/></svg>Қосуға және баптауға көмектесеміз</li>
+          <li><svg class="ico"><use href="#i-gift"/></svg>1 ай интернет сыйлыққа</li>
+        </ul>
+      </div>
+
+      <form class="form rv" id="lead-form" novalidate>
+        <div class="field">
+          <label for="f-name" class="sr-only">Атыңыз</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Атыңызды жазыңыз">
+          <p class="err"></p>
+        </div>
+
+        <div class="field">
+          <label for="f-phone" class="sr-only">Телефон нөмірі</label>
+          <div class="phone">
+            <span class="phone__country">
+              <svg class="phone__flag" aria-hidden="true"><use href="#fl-kz"/></svg>
+              <svg class="phone__caret" aria-hidden="true"><use href="#i-caret"/></svg>
+              <!-- Список лежит прозрачным слоем поверх флага: на телефоне
+                   открывается привычный системный выбор, а вид у поля свой -->
+              <select id="f-country" aria-label="Ел коды">
+                <option value="KZ" data-dial="7"   data-flag="fl-kz" selected>Қазақстан +7</option>
+                <option value="RU" data-dial="7"   data-flag="fl-ru">Ресей +7</option>
+                <option value="UZ" data-dial="998" data-flag="fl-uz">Өзбекстан +998</option>
+                <option value="KG" data-dial="996" data-flag="fl-kg">Қырғызстан +996</option>
+                <option value="TJ" data-dial="992" data-flag="fl-tj">Тәжікстан +992</option>
+                <option value="TM" data-dial="993" data-flag="fl-tm">Түрікменстан +993</option>
+                <option value="AZ" data-dial="994" data-flag="fl-az">Әзірбайжан +994</option>
+                <option value="GE" data-dial="995" data-flag="fl-ge">Грузия +995</option>
+                <option value="BY" data-dial="375" data-flag="fl-by">Беларусь +375</option>
+                <option value="UA" data-dial="380" data-flag="fl-ua">Украина +380</option>
+                <option value="MN" data-dial="976" data-flag="fl-mn">Моңғолия +976</option>
+                <option value="TR" data-dial="90"  data-flag="fl-tr">Түркия +90</option>
+                <option value="CN" data-dial="86"  data-flag="fl-cn">Қытай +86</option>
+                <option value="AE" data-dial="971" data-flag="fl-ae">БАӘ +971</option>
+                <option value="DE" data-dial="49"  data-flag="fl-de">Германия +49</option>
+                <option value="US" data-dial="1"   data-flag="fl-us">АҚШ +1</option>
+              </select>
+            </span>
+            <span class="phone__dial">+7</span>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(000) 000-00-00">
+          </div>
+          <p class="err"></p>
+        </div>
+
+        <div class="field">
+          <label for="f-city" class="sr-only">Қалаңыз</label>
+          <input id="f-city" name="city" type="text" autocomplete="address-level2" placeholder="Қалаңызды жазыңыз">
+          <p class="err"></p>
+        </div>
+
+        <button class="btn btn--primary" type="submit">
+          Өтінім жіберу
+          <svg class="ico" width="19" height="19"><use href="#i-arrow"/></svg>
+        </button>
+
+        <div class="form__or"><span>немесе</span></div>
+
+        <a class="btn btn--wa" href="#" data-wa="general">
+          <svg class="ico ico--fill" width="19" height="19"><use href="#i-wa"/></svg>
+          WhatsApp-қа жазу
+        </a>
+
+        <p class="form__note">Түймені басқанда деректеріңіз WhatsApp арқылы бізге жіберіледі.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================================ Футер ================================ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+
+      <div class="foot__brand">
+        <a class="logo" href="index.html">
+          <svg class="ico" width="31" height="31"><use href="#i-dish"/></svg>
+          <span><b>STARLINK KZ</b><span>Спутниктік интернет</span></span>
+        </a>
+        <p class="foot__about">
+          Starlink бойынша кеңес керек пе? Қай модель сізге сәйкес екенін анықтап береміз,
+          бағасын түсіндіреміз және қосу бойынша көмектесеміз. WhatsApp арқылы жазыңыз — жауап береміз.
+        </p>
+        <div class="foot__acts">
+          <a class="btn btn--wa btn--sm" href="#" data-wa="general">
+            <svg class="ico ico--fill" width="18" height="18"><use href="#i-wa"/></svg>
+            WhatsApp-қа жазу
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Байланыс</h4>
+        <ul>
+          <li><a href="#" data-tel data-contact="phone">+7 705 889 6815</a></li>
+          <li><a href="#" data-mail>info@example.kz</a></li>
+          <li data-contact="address">___ қаласы, ___ көшесі</li>
+          <li data-contact="company">ЖК «___»</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Бөлімдер</h4>
+        <ul>
+          <li><a href="#problems">Неге керек</a></li>
+          <li><a href="#why">Неліктен Starlink</a></li>
+          <li><a href="#plans">Комплекттер</a></li>
+          <li><a href="#uses">Кімдерге қажет</a></li>
+          <li><a href="#contact">Өтінім қалдыру</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="foot__bot">
+      <span>© <span data-year>2026</span> <span data-contact="company">ЖК «___»</span></span>
+      <span>Starlink — SpaceX компаниясының сауда белгісі. Біз ресми дилер емеспіз, құрылғыны сатып, қосуға көмектесеміз.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="#" data-wa="general" aria-label="WhatsApp арқылы жазу">
+  <svg class="ico ico--fill" width="31" height="31"><use href="#i-wa"/></svg>
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,606 @@
+/* ==========================================================================
+   Starlink KZ — лендинг
+   Палитра и типографика повторяют структуру референса wifi-zholda.kz
+   ========================================================================== */
+
+/* --- 1. Токены --------------------------------------------------------- */
+:root{
+  --blue:        #0880C0;
+  --blue-dark:   #06679b;
+  --blue-light:  #e8f4fb;
+  --accent:      #327AFF;
+  --wa:          #00B731;
+  --wa-dark:     #009c2a;
+
+  --ink:         #0f1720;
+  --ink-soft:    #2b3742;
+  --muted:       #5a6572;
+  --line:        #e3e8ed;
+
+  --bg:          #ffffff;
+  --bg-soft:     #efefef;
+  --bg-tint:     #f4f8fb;
+  --bg-footer:   #fcfcfc;
+  --night:       #08131f;
+
+  --r-pill:      30px;
+  --r-card:      10px;
+  --r-sm:        6px;
+
+  --shadow-sm:   0 1px 2px rgba(15,23,32,.06), 0 2px 8px rgba(15,23,32,.05);
+  --shadow-md:   0 4px 12px rgba(15,23,32,.07), 0 12px 32px rgba(15,23,32,.07);
+  --shadow-lg:   0 8px 24px rgba(15,23,32,.10), 0 24px 60px rgba(15,23,32,.10);
+
+  --wrap:        1180px;
+  --gap:         28px;
+  --pad-y:       92px;
+
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* --- 2. Сброс ---------------------------------------------------------- */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; scroll-padding-top:88px; -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font); font-size:17px; line-height:1.6;
+  font-weight:400; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img,svg{ max-width:100%; display:block; }
+
+/* Спрайт иконок: скрыт, но доступен для <use> */
+.sprite{ position:absolute; width:0; height:0; overflow:hidden; }
+/* Базовый стиль всех иконок — контурные, наследуют цвет текста */
+.ico{
+  width:24px; height:24px;
+  fill:none; stroke:currentColor; stroke-width:1.75;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+/* Сплошные иконки (логотип WhatsApp) */
+.ico--fill{ fill:currentColor; stroke:none; }
+a{ color:var(--accent); text-decoration:none; }
+button{ font:inherit; color:inherit; }
+ul{ margin:0; padding:0; list-style:none; }
+h1,h2,h3,h4,p{ margin:0; }
+:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; border-radius:4px; }
+
+/* --- 3. Раскладка и типографика ---------------------------------------- */
+.wrap{ width:100%; max-width:var(--wrap); margin-inline:auto; padding-inline:24px; }
+.section{ padding-block:var(--pad-y); }
+.section--tint{ background:var(--bg-tint); }
+.section--soft{ background:var(--bg-soft); }
+
+.head{ max-width:760px; margin:0 auto 54px; text-align:center; }
+
+.eyebrow{
+  display:inline-block; margin-bottom:16px; padding:6px 14px;
+  background:var(--blue-light); color:var(--blue);
+  font-size:13px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  border-radius:var(--r-pill);
+}
+h2{ font-size:clamp(27px,3.4vw,38px); font-weight:600; line-height:1.22; letter-spacing:-.02em; }
+h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
+.lead{ margin-top:18px; font-size:18px; line-height:1.65; color:var(--muted); }
+
+/* --- 4. Кнопки --------------------------------------------------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:15px 30px; border:0; border-radius:var(--r-pill);
+  font-size:16px; font-weight:600; line-height:1.2; white-space:nowrap;
+  cursor:pointer; transition:background .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.btn:active{ transform:translateY(1px); }
+.btn svg{ flex:none; width:19px; height:19px; }
+
+.btn--primary{ background:var(--blue); color:#fff; box-shadow:0 4px 14px rgba(8,128,192,.28); }
+.btn--primary:hover{ background:var(--blue-dark); box-shadow:0 6px 20px rgba(8,128,192,.36); }
+
+.btn--wa{ background:var(--wa); color:#fff; box-shadow:0 4px 14px rgba(0,183,49,.26); }
+.btn--wa:hover{ background:var(--wa-dark); box-shadow:0 6px 20px rgba(0,183,49,.34); }
+
+.btn--ghost{ background:transparent; color:#fff; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45); }
+.btn--ghost:hover{ background:rgba(255,255,255,.12); box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.75); }
+
+.btn--outline{ background:#fff; color:var(--blue); box-shadow:inset 0 0 0 1.5px var(--blue); }
+.btn--outline:hover{ background:var(--blue); color:#fff; }
+
+.btn--card{ width:100%; border-radius:var(--r-sm); padding:15px 22px; }
+.btn--sm{ padding:11px 22px; font-size:15px; }
+.btn--lg{ padding:17px 38px; font-size:17px; }
+
+/* --- 5. Шапка ---------------------------------------------------------- */
+.hdr{
+  position:fixed; inset:0 0 auto 0; z-index:100;
+  background:transparent; transition:background .25s ease, box-shadow .25s ease;
+}
+.hdr__in{ display:flex; align-items:center; gap:24px; height:76px; }
+.hdr.is-stuck{
+  background:rgba(255,255,255,.94); backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 var(--line), var(--shadow-sm);
+}
+
+.logo{ display:flex; align-items:center; gap:11px; color:#fff; flex:none; transition:color .25s ease; }
+.logo svg{ flex:none; width:31px; height:31px; }
+.logo b{ display:block; font-size:19px; font-weight:700; letter-spacing:-.02em; }
+.logo > span > span{
+  display:block; margin-top:-2px; font-size:11px; font-weight:500;
+  letter-spacing:.09em; text-transform:uppercase; opacity:.62;
+}
+
+.nav{ display:flex; align-items:center; gap:30px; margin-left:auto; }
+.nav a{
+  color:rgba(255,255,255,.82); font-size:15px; font-weight:500;
+  white-space:nowrap; /* иначе русские подписи ломаются на две строки */
+  transition:color .18s ease;
+}
+.nav a:hover{ color:#fff; }
+
+.hdr__side{ display:flex; align-items:center; gap:16px; flex:none; }
+
+.lang{ display:flex; align-items:center; gap:2px; padding:3px; background:rgba(255,255,255,.12); border-radius:var(--r-pill); }
+.lang a{
+  padding:5px 11px; border-radius:var(--r-pill); color:rgba(255,255,255,.72);
+  font-size:13px; font-weight:600; letter-spacing:.02em; transition:.18s ease;
+}
+.lang a:hover{ color:#fff; }
+.lang a[aria-current="true"]{ background:#fff; color:var(--ink); }
+
+/* тёмный текст шапки после скролла */
+.hdr.is-stuck .logo{ color:var(--ink); }
+.hdr.is-stuck .nav a{ color:var(--ink-soft); }
+.hdr.is-stuck .nav a:hover{ color:var(--blue); }
+.hdr.is-stuck .lang{ background:#eef2f6; }
+.hdr.is-stuck .lang a{ color:var(--muted); }
+.hdr.is-stuck .lang a[aria-current="true"]{ background:var(--blue); color:#fff; }
+.hdr.is-stuck .burger span{ background:var(--ink); }
+
+.burger{ display:none; width:44px; height:44px; padding:11px 10px; background:none; border:0; cursor:pointer; }
+.burger span{ display:block; height:2px; border-radius:2px; background:#fff; transition:.22s ease; }
+.burger span+span{ margin-top:5px; }
+.burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+/* --- 6. Hero ----------------------------------------------------------- */
+.hero{
+  position:relative; display:flex; align-items:center; min-height:min(100svh,860px);
+  padding-block:150px 76px; color:#fff; overflow:hidden;
+  background-color:var(--night);
+  background-position:center; background-repeat:no-repeat; background-size:cover;
+  /* ФОТО ПЕРВОГО ЭКРАНА (горизонтальное, для десктопа) — assets/img/hero.jpg
+     Ниже — запасной градиент: если файл удалить, экран останется тёмно-синим,
+     а не белым. Чтобы поменять фото — просто замените файл hero.jpg */
+  background-image:
+    url("../img/hero.jpg"),
+    radial-gradient(900px 620px at 78% 4%,  rgba(50,122,255,.30), transparent 62%),
+    radial-gradient(760px 540px at 10% 96%, rgba(8,128,192,.24), transparent 66%),
+    linear-gradient(168deg, #0d1f33 0%, #08131f 46%, #050c15 100%);
+}
+/* Затемнение поверх фото: слева плотное — под текст, справа почти прозрачное,
+   чтобы дом с тарелкой остался виден */
+.hero::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(100deg,
+    rgba(4,10,18,.92) 0%,
+    rgba(4,10,18,.80) 34%,
+    rgba(4,10,18,.44) 64%,
+    rgba(4,10,18,.16) 100%);
+}
+/* Второй слой — снизу: нижний ряд плашек попадает на освещённый дом,
+   без этого белый текст на нём теряется */
+.hero::after{
+  content:""; position:absolute; inset:auto 0 0 0; height:44%;
+  background:linear-gradient(to top, rgba(4,10,18,.62), transparent);
+}
+
+/* На узких экранах — вертикальное фото (assets/img/hero-mobile.jpg):
+   горизонтальное на телефоне обрезалось бы до неузнаваемости */
+@media (max-width:760px){
+  .hero{
+    background-image:
+      url("../img/hero-mobile.jpg"),
+      radial-gradient(600px 420px at 80% 6%,  rgba(50,122,255,.30), transparent 62%),
+      linear-gradient(168deg, #0d1f33 0%, #08131f 46%, #050c15 100%);
+  }
+  /* Вуаль здесь почти не нужна: замер яркости фото дал 0.017–0.061 при пороге
+     0.183 для белого текста, то есть небо и так достаточно тёмное. Сильное
+     затемнение только убивало Млечный Путь */
+  .hero::before{
+    background:linear-gradient(to bottom,
+      rgba(4,10,18,.24) 0%,
+      rgba(4,10,18,.12) 34%,
+      rgba(4,10,18,.12) 58%,
+      rgba(4,10,18,.26) 100%);
+  }
+  /* внизу дом подсвечен изнутри — там вуаль нужна, но заметно слабее */
+  .hero::after{
+    height:38%;
+    background:linear-gradient(to top, rgba(4,10,18,.42), transparent);
+  }
+}
+.hero .wrap{ position:relative; z-index:1; }
+.hero__in{ max-width:790px; }
+
+.hero h1{
+  font-size:clamp(33px,5.4vw,53px); font-weight:600; line-height:1.14;
+  letter-spacing:-.025em; text-wrap:balance;
+}
+.hero h1 em{ font-style:normal; color:#6fc4f0; }
+.hero__lead{
+  margin-top:24px; max-width:590px; font-size:clamp(17px,1.6vw,19px);
+  line-height:1.62; color:rgba(255,255,255,.80);
+}
+.hero__acts{ display:flex; flex-wrap:wrap; gap:14px; margin-top:38px; }
+.hero__pills{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px 30px;
+  margin-top:62px; padding-top:34px; border-top:1px solid rgba(255,255,255,.15);
+}
+.pill{ display:flex; gap:13px; align-items:flex-start; }
+.pill svg{ flex:none; width:26px; height:26px; margin-top:1px; color:#6fc4f0; }
+.pill p{ font-size:15px; line-height:1.5; color:rgba(255,255,255,.86); }
+
+/* --- 7. Сетки и карточки ----------------------------------------------- */
+.grid{ display:grid; gap:var(--gap); }
+.grid--4{ grid-template-columns:repeat(4,1fr); }
+.grid--3{ grid-template-columns:repeat(3,1fr); }
+
+.card{
+  padding:34px 30px; background:#fff; border:1px solid var(--line);
+  border-radius:var(--r-card); box-shadow:var(--shadow-sm);
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:#d3dde5; }
+.card__ico{
+  display:grid; place-items:center; width:54px; height:54px; margin-bottom:22px;
+  background:var(--blue-light); color:var(--blue); border-radius:14px;
+}
+.card__ico svg{ width:27px; height:27px; }
+.card h3{ margin-bottom:11px; }
+.card p{ font-size:15.5px; line-height:1.6; color:var(--muted); }
+
+/* --- 8. Полоса-вывод --------------------------------------------------- */
+.note{
+  display:flex; align-items:center; gap:20px; margin-top:52px;
+  padding:28px 34px; background:var(--blue-light);
+  border-left:4px solid var(--blue); border-radius:var(--r-sm);
+}
+.note svg{ flex:none; width:30px; height:30px; color:var(--blue); }
+.note p{ font-size:17px; line-height:1.55; color:var(--ink-soft); }
+.note b{ font-weight:600; color:var(--ink); }
+
+/* --- 9. Преимущества --------------------------------------------------- */
+.feat{ text-align:center; padding:8px; }
+.feat__ico{
+  display:grid; place-items:center; width:70px; height:70px; margin:0 auto 22px;
+  background:#fff; color:var(--blue); border-radius:20px; box-shadow:var(--shadow-sm);
+}
+.feat__ico svg{ width:33px; height:33px; }
+.feat h3{ margin-bottom:10px; }
+.feat p{ font-size:15.5px; line-height:1.6; color:var(--muted); }
+
+/* --- 10. Тарифы -------------------------------------------------------- */
+.plans{ display:grid; grid-template-columns:repeat(2,1fr); gap:32px; max-width:940px; margin-inline:auto; }
+.plan{
+  position:relative; display:flex; flex-direction:column; padding:38px 34px 34px;
+  background:#fff; border:1px solid var(--line); border-radius:var(--r-card);
+  box-shadow:var(--shadow-md); transition:transform .22s ease, box-shadow .22s ease;
+}
+.plan:hover{ transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+/* Фото товара — во всю ширину карточки, вровень с её верхним краем.
+   Отрицательные отступы гасят падинги .plan (38px сверху, 34px по бокам) */
+.plan__art{
+  margin:-38px -34px 26px;
+  border-radius:calc(var(--r-card) - 1px) calc(var(--r-card) - 1px) 0 0;
+  overflow:hidden;
+  background:#0d1f33;
+}
+.plan__art img{
+  /* height:auto обязателен: иначе атрибут height="880" в HTML применяется
+     как реальная высота и aspect-ratio не работает */
+  display:block; width:100%; height:auto; aspect-ratio:16/10;
+  object-fit:cover;
+  /* кадр смещён вверх: так в него попадает и спутник, и сама антенна */
+  object-position:center 32%;
+}
+/* У Mini кадр опущен ниже — чтобы попала крыша автомобиля с рейлингами
+   и было сразу понятно, что панель стоит на машине */
+.plan__art--mini img{ object-position:center 62%; }
+.plan h3{ font-size:24px; }
+.plan__sub{ margin-top:7px; font-size:15px; line-height:1.5; color:var(--muted); }
+.plan__price{ margin:22px 0 24px; padding-block:20px; border-block:1px solid var(--line); }
+.plan__price b{ font-size:27px; font-weight:700; letter-spacing:-.02em; }
+.plan__price i{ display:block; margin-top:3px; font-style:normal; font-size:13.5px; color:var(--muted); }
+.plan ul{ display:grid; gap:13px; margin-bottom:28px; }
+.plan li{ display:flex; gap:11px; font-size:15.5px; line-height:1.5; color:var(--ink-soft); }
+.plan li svg{ flex:none; width:19px; height:19px; margin-top:2px; color:var(--wa); }
+.plan .btn{ margin-top:auto; }
+
+/* --- 11. Сценарии использования ---------------------------------------- */
+.uses{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.use{
+  display:flex; align-items:center; gap:16px; padding:22px 24px;
+  background:#fff; border:1px solid var(--line); border-radius:var(--r-sm);
+  font-size:16px; font-weight:500; color:var(--ink-soft);
+  transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.use:hover{ transform:translateY(-3px); border-color:var(--blue); box-shadow:var(--shadow-sm); }
+.use svg{ flex:none; width:27px; height:27px; color:var(--blue); }
+
+/* --- 12. Полоса-консультация ------------------------------------------- */
+.cta{
+  position:relative; padding-block:80px; color:#fff; overflow:hidden;
+  background-color:var(--night);
+  background-repeat:no-repeat; background-size:cover;
+  /* Кадр смещён вверх: секция низкая и широкая, при центрировании тарелка
+     на крыше обрезалась сверху */
+  background-position:center 20%;
+  background-image:
+    url("../img/cta.jpg"),
+    linear-gradient(150deg, #0d1f33, #08131f 62%, #050c15);
+}
+/* Вуаль слабая — фото само по себе тёмное (замер яркости 0.02 при пороге 0.183).
+   Справа сходит почти на нет: там на фото стоит тарелка, её нельзя закрашивать */
+.cta::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg,
+    rgba(4,10,18,.44) 0%,
+    rgba(4,10,18,.36) 46%,
+    rgba(4,10,18,.16) 74%,
+    rgba(4,10,18,.02) 100%);
+}
+.cta .wrap{ position:relative; z-index:1; }
+.cta__in{ max-width:720px; margin-inline:auto; text-align:center; }
+.cta h2{ text-wrap:balance; }
+.cta p{ margin-top:18px; font-size:18px; line-height:1.62; color:rgba(255,255,255,.78); }
+.cta .btn{ margin-top:34px; }
+
+/* --- 13. Форма --------------------------------------------------------- */
+.lead-grid{ display:grid; grid-template-columns:1fr 1.1fr; gap:64px; align-items:start; }
+.lead-info .lead{ max-width:440px; }
+.lead-info ul{ display:grid; gap:16px; margin-top:32px; }
+.lead-info li{ display:flex; gap:13px; align-items:flex-start; font-size:16px; color:var(--ink-soft); }
+.lead-info li svg{ flex:none; width:22px; height:22px; margin-top:1px; color:var(--blue); }
+
+.form{ padding:38px 36px; background:#fff; border-radius:var(--r-card); box-shadow:var(--shadow-md); }
+.field{ margin-bottom:19px; }
+.field label{ display:block; margin-bottom:8px; font-size:14.5px; font-weight:600; color:var(--ink-soft); }
+.field input{
+  width:100%; padding:15px 17px; background:#fff;
+  border:1.5px solid var(--line); border-radius:var(--r-sm);
+  font-family:inherit; font-size:16px; color:var(--ink);
+  transition:border-color .18s ease, box-shadow .18s ease;
+}
+.field input::placeholder{ color:#9aa5b1; }
+.field input:focus{ outline:0; border-color:var(--blue); box-shadow:0 0 0 3px rgba(8,128,192,.14); }
+.field input[aria-invalid="true"]{ border-color:#e04545; }
+.field .err{ display:none; margin-top:6px; font-size:13.5px; color:#e04545; }
+/* класс ставит JS: поле телефона лежит внутри .phone, и соседний селектор
+   до сообщения об ошибке уже не дотягивается */
+.field.has-error .err{ display:block; }
+
+/* Телефон: флаг, код страны и номер — всё внутри одной рамки */
+.phone{
+  display:flex; align-items:center;
+  padding-left:14px; background:#fff;
+  border:1.5px solid var(--line); border-radius:var(--r-sm);
+  transition:border-color .18s ease, box-shadow .18s ease;
+}
+.phone:focus-within{ border-color:var(--blue); box-shadow:0 0 0 3px rgba(8,128,192,.14); }
+.field.has-error .phone{ border-color:#e04545; }
+
+.phone__country{ position:relative; display:flex; align-items:center; gap:7px; flex:none; }
+.phone__flag{ width:23px; height:16px; border-radius:2px; box-shadow:0 0 0 1px rgba(15,23,32,.12); }
+.phone__caret{ width:9px; height:6px; color:var(--muted); fill:currentColor; stroke:none; }
+/* Нативный список — прозрачным слоем поверх флага: на телефоне открывается
+   привычный системный выбор, а внешний вид поля остаётся нашим */
+.phone__country select{
+  position:absolute; inset:0; width:100%; height:100%;
+  opacity:0; border:0; padding:0; cursor:pointer;
+  -webkit-appearance:none; appearance:none;
+}
+.phone__dial{ flex:none; margin-left:11px; font-size:16px; font-weight:500; color:var(--ink); }
+/* Поле ввода без собственной рамки — рамка теперь общая, у .phone */
+.field .phone input{
+  flex:1; min-width:0; padding:15px 16px 15px 7px;
+  border:0; background:none; border-radius:0;
+}
+.field .phone input:focus{ outline:0; box-shadow:none; }
+
+/* Подпись только для скринридеров: визуально скрыта, но озвучивается */
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+.form .btn{ width:100%; border-radius:var(--r-sm); }
+.form__or{ position:relative; margin:22px 0 18px; text-align:center; }
+.form__or::before{ content:""; position:absolute; inset:50% 0 auto 0; height:1px; background:var(--line); }
+.form__or span{ position:relative; padding-inline:14px; background:#fff; font-size:14px; color:var(--muted); }
+.form__note{ margin-top:18px; font-size:13px; line-height:1.5; color:var(--muted); text-align:center; }
+
+/* --- 14. Футер --------------------------------------------------------- */
+.foot{ padding-block:64px 34px; background:var(--bg-footer); border-top:1px solid var(--line); }
+.foot__grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:44px; }
+.foot .logo{ color:var(--ink); }
+.foot__about{ margin-top:18px; max-width:330px; font-size:15px; line-height:1.6; color:var(--muted); }
+.foot h4{
+  margin-bottom:16px; font-size:14px; font-weight:600;
+  letter-spacing:.05em; text-transform:uppercase; color:var(--ink);
+}
+.foot ul{ display:grid; gap:11px; }
+.foot li,.foot li a{ font-size:15.5px; line-height:1.5; color:var(--muted); }
+.foot li a:hover{ color:var(--blue); }
+.foot__acts{ display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+.foot__bot{
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
+  margin-top:46px; padding-top:26px; border-top:1px solid var(--line);
+  font-size:14px; color:var(--muted);
+}
+
+/* --- 15. Плавающая кнопка WhatsApp ------------------------------------- */
+.wa-fab{
+  position:fixed; right:22px; bottom:22px; z-index:90;
+  display:grid; place-items:center; width:58px; height:58px;
+  background:var(--wa); color:#fff; border-radius:50%;
+  box-shadow:0 6px 22px rgba(0,183,49,.42);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.wa-fab:hover{ transform:scale(1.07); box-shadow:0 8px 28px rgba(0,183,49,.55); }
+.wa-fab svg{ width:31px; height:31px; }
+.wa-fab::after{
+  content:""; position:absolute; inset:0; border-radius:50%;
+  border:2px solid var(--wa); animation:ping 2.4s cubic-bezier(0,0,.2,1) infinite;
+}
+@keyframes ping{ 0%{ transform:scale(1); opacity:.65 } 75%,100%{ transform:scale(1.75); opacity:0 } }
+
+/* --- 16. Появление при скролле ----------------------------------------- */
+.rv{ opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease; }
+.rv.is-in{ opacity:1; transform:none; }
+
+/* --- 17. Адаптив ------------------------------------------------------- */
+/* на средних экранах меню ужимаем, чтобы шапка осталась в одну строку */
+@media (max-width:1280px){
+  .hdr__in{ gap:16px; }
+  .nav{ gap:20px; }
+  .nav a{ font-size:14px; }
+}
+@media (max-width:1100px){
+  :root{ --pad-y:76px; --gap:22px; }
+  .grid--4{ grid-template-columns:repeat(2,1fr); }
+  .lead-grid{ grid-template-columns:1fr; gap:44px; }
+  .lead-info .lead{ max-width:none; }
+}
+@media (max-width:900px){
+  .nav{
+    position:fixed; inset:76px 0 auto 0; flex-direction:column; align-items:stretch; gap:0;
+    margin:0; padding:10px 24px 22px; background:#fff;
+    box-shadow:0 12px 28px rgba(15,23,32,.12);
+    transform:translateY(-135%); transition:transform .3s ease; visibility:hidden;
+  }
+  .nav.is-open{ transform:none; visibility:visible; }
+  .nav a,.hdr.is-stuck .nav a{
+    padding:15px 0; color:var(--ink-soft); border-bottom:1px solid var(--line); font-size:16px;
+  }
+  /* в строке шапки остаются логотип, переключатель языка и бургер —
+     ужимаем отступы, чтобы всё поместилось на узких экранах */
+  .hdr__in{ gap:12px; }
+  .hdr__side{ margin-left:auto; }
+  .hdr__side .btn{ display:none; }
+  .burger{ display:block; order:3; flex:none; margin-right:-10px; }
+  .hdr:not(.is-stuck){ background:rgba(8,19,31,.82); backdrop-filter:blur(10px); }
+
+  .grid--3,.uses{ grid-template-columns:repeat(2,1fr); }
+  .plans{ grid-template-columns:1fr; max-width:520px; }
+  .hero__pills{ grid-template-columns:1fr; gap:16px; margin-top:46px; }
+  .foot__grid{ grid-template-columns:1fr 1fr; gap:36px; }
+  .foot__brand{ grid-column:1/-1; }
+}
+@media (max-width:640px){
+  :root{ --pad-y:60px; }
+  body{ font-size:16px; }
+  .wrap{ padding-inline:18px; }
+
+  /* компактный логотип: подпись под названием прячем, иначе бургер не помещается */
+  .logo{ gap:9px; }
+  .logo svg{ width:27px; height:27px; }
+  .logo b{ font-size:16px; }
+  .logo > span > span{ display:none; }
+  .lang a{ padding:5px 9px; font-size:12px; }
+  .foot .logo > span > span{ display:block; }
+
+  .hero{ padding-block:126px 60px; min-height:auto; }
+  /* Кнопки — по ширине своего текста, прижаты влево. Растягивать их на общую
+     ширину нельзя: закроют тарелку Starlink на фото (она примерно на x≈327) */
+  .hero__acts{ flex-direction:column; align-items:flex-start; }
+  .hero__acts .btn{ width:auto; }
+  .hero__acts .btn--lg{ padding-inline:24px; }
+  /* Зелёная кнопка длиннее синей из-за подписи, поэтому ужимаем её отдельно:
+     как вторичное действие она может быть чуть мельче основной синей */
+  .hero__acts .btn--wa{ font-size:15px; padding-inline:18px; gap:8px; }
+  .hero__acts .btn--wa svg{ width:17px; height:17px; }
+  /* Самый длинный заголовок («Кәдімгі интернет жұмыс істемеген кезде…», 61 символ)
+     при 27px уезжал на три строки. Замер по факту: в две строки он укладывается
+     только с 20px — при 21px нужно 350px ширины из 339px доступных.
+     Больший кегль недостижим: 22px требует 367px, а на экране 375px максимум
+     полезной ширины — 351px. Остальные заголовки короткие, им 20px хватает
+     с запасом, поэтому размер общий — без исключений для отдельных секций. */
+  h2{ font-size:20px; letter-spacing:-.03em; }
+  /* Заголовок на мобильном 20px, поэтому подзаголовок в 18px смотрелся почти
+     вровень с ним. Опускаем до 15.5px — иерархия восстанавливается,
+     а блок становится заметно компактнее */
+  /* Все абзацы под заголовками — единым кеглем 15.5px. При h2 в 20px абзацы
+     в 17-18px читались почти вровень с заголовком и разрастались на 3-4 строки.
+     .hero__lead намеренно не трогаем: он под h1 в 33px, там иерархия в порядке */
+  /* Вертикальное фото для CTA: горизонтальное на телефоне обрезалось бы
+     до неузнаваемости. Вуаль ровная и слабая — фото тёмное, а тарелка
+     приходится на правый край, её нельзя перекрывать */
+  .cta{
+    background-image:
+      url("../img/cta-mobile.jpg"),
+      linear-gradient(150deg, #0d1f33, #08131f 62%, #050c15);
+    background-position:center;
+  }
+  .cta::before{
+    background:linear-gradient(180deg,
+      rgba(4,10,18,.42) 0%,
+      rgba(4,10,18,.30) 45%,
+      rgba(4,10,18,.42) 100%);
+  }
+
+  .lead,
+  .cta p,
+  .note p{ font-size:15.5px; line-height:1.55; }
+  .lead{ margin-top:12px; }
+  .cta p{ margin-top:14px; }
+
+  /* Шкала заголовков на мобильном. h2 упёрт в 20px (иначе длинный заголовок
+     секции «Кәдімгі интернет…» уезжает на три строки), поэтому всё, что ниже
+     по иерархии, обязано быть мельче. Без этого h3 карточек оказывался вровень
+     с h2, а название товара (24px) — вообще крупнее заголовка секции.
+     Порядок: h2 20 > название товара 19 > h3 карточек 17 > текст 15.5 */
+  h3{ font-size:17px; }
+  .plan h3{ font-size:19px; }
+  .head{ margin-bottom:38px; }
+  .grid--4,.grid--3,.uses{ grid-template-columns:1fr; }
+  .card{ padding:28px 24px; }
+
+  /* Список характеристик не помещался в одну строку: из 339px ширины карточки
+     68px съедали боковые падинги. Ужимаем поля, иконку и кегль — тогда строки
+     перестают переноситься. Отступы .plan__art обязаны совпадать с падингами
+     .plan, иначе фото перестанет быть вровень с краями карточки */
+  .plan{ padding:26px 18px 26px; }
+  .plan__art{ margin:-26px -18px 22px; }
+  .plan li{ font-size:13.5px; gap:9px; }
+  .plan li svg{ width:17px; height:17px; }
+
+  .note{ flex-direction:column; align-items:flex-start; gap:14px; padding:24px; }
+  .form{ padding:28px 22px; }
+  .foot__grid{ grid-template-columns:1fr; gap:32px; }
+  .foot__bot{ flex-direction:column; }
+  .wa-fab{ right:16px; bottom:16px; width:54px; height:54px; }
+  /* Кнопки на всю ширину. У .btn стоит white-space:nowrap, и длинная подпись
+     («Получить бесплатную консультацию» — 421px против 339px доступных)
+     вылезала за пределы кнопки. Разрешаем перенос и ужимаем боковые поля:
+     короткие подписи остаются в одну строку, длинные аккуратно переносятся */
+  .lead-info .btn,
+  .cta .btn,
+  .form .btn{ width:100%; white-space:normal; padding-inline:20px; }
+
+  /* «Получить бесплатную консультацию» при 17px требует 385px из 339px доступных
+     и переносилась на две строки. При 15px с ужатыми полями и иконкой
+     укладывается в одну (324px, запас 15px). white-space:normal выше оставлен
+     страховкой: если подпись когда-нибудь удлинят, она перенесётся,
+     а не вылезет за пределы кнопки, как было до этого */
+  .cta .btn{ font-size:15px; padding-inline:10px; gap:8px; }
+  .cta .btn svg{ width:17px; height:17px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{
+    animation-duration:.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .rv{ opacity:1; transform:none; }
+}
