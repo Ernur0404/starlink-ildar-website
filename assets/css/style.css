@@ -79,7 +79,13 @@ h1,h2,h3,h4,p{ margin:0; }
   font-size:13px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
   border-radius:var(--r-pill);
 }
-h2{ font-size:clamp(27px,3.4vw,38px); font-weight:600; line-height:1.22; letter-spacing:-.02em; }
+h2{
+  font-size:clamp(27px,3.4vw,38px); font-weight:600; line-height:1.22;
+  letter-spacing:-.02em; color:var(--blue);
+}
+/* В тёмной полосе-консультации фон фирменно-синий, поэтому заголовок
+   остаётся белым — синий на синем просто пропал бы */
+.cta h2{ color:#fff; }
 h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
 .lead{ margin-top:18px; font-size:18px; line-height:1.65; color:var(--muted); }
 
