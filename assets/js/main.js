@@ -11,8 +11,6 @@
   var CONTACTS = {
     whatsapp: '77058896815',              // ← реальный номер клиента (только цифры)
     phone:    '+7 705 889 6815',          // ← как показывать на сайте
-    email:    'info@example.kz',          // ЗАГЛУШКА: почта — настоящей пока нет
-
     instagram: 'https://www.instagram.com/starlink_eldar',
     tiktok:    'https://www.tiktok.com/@eldarenergy',
 
@@ -74,11 +72,6 @@
 
   document.querySelectorAll('[data-tel]').forEach(function (el) {
     el.href = 'tel:+' + CONTACTS.whatsapp;
-  });
-
-  document.querySelectorAll('[data-mail]').forEach(function (el) {
-    el.href = 'mailto:' + CONTACTS.email;
-    el.textContent = CONTACTS.email;
   });
 
   /* Соцсети: data-social="instagram" | "tiktok" */
