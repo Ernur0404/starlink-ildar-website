@@ -616,7 +616,11 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
 
   .note{ flex-direction:column; align-items:flex-start; gap:14px; padding:24px; }
   .form{ padding:28px 22px; }
-  .foot__grid{ grid-template-columns:1fr; gap:32px; }
+  /* «Байланыс» и «Бөлімдер» держим в два столбца рядом — списки там короткие,
+     в одну колонку подвал растягивался вниз без нужды.
+     Блок с описанием и кнопкой WhatsApp остаётся во всю ширину
+     (grid-column:1/-1 задан выше, в правиле для 900px). */
+  .foot__grid{ grid-template-columns:1fr 1fr; gap:30px 20px; }
   .foot__bot{ flex-direction:column; }
   .wa-fab{ right:16px; bottom:16px; width:54px; height:54px; }
   /* Кнопки на всю ширину. У .btn стоит white-space:nowrap, и длинная подпись
