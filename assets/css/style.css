@@ -447,7 +447,20 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
 .foot ul{ display:grid; gap:11px; }
 .foot li,.foot li a{ font-size:15.5px; line-height:1.5; color:var(--muted); }
 .foot li a:hover{ color:var(--blue); }
-.foot__acts{ display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; }
+.foot__acts{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:20px; }
+
+/* Соцсети — круглые иконки рядом с кнопкой WhatsApp.
+   При наведении заливаются фирменным цветом самой сети. */
+.social{
+  display:grid; place-items:center; flex:none; width:42px; height:42px;
+  color:var(--ink-soft); background:#fff;
+  border:1px solid var(--line); border-radius:50%;
+  transition:color .18s ease, background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.social .ico{ width:20px; height:20px; }
+.social:hover{ color:#fff; border-color:transparent; transform:translateY(-2px); }
+.social--ig:hover{ background:linear-gradient(45deg,#f09433,#dc2743 45%,#bc1888); }
+.social--tt:hover{ background:#111; }
 .foot__bot{
   display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
   margin-top:46px; padding-top:26px; border-top:1px solid var(--line);

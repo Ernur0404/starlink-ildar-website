@@ -14,6 +14,9 @@
     company:  'ЖК «___»',                 // ЗАГЛУШКА: название компании / ТОО
     email:    'info@example.kz',          // ЗАГЛУШКА: почта
 
+    instagram: 'https://www.instagram.com/starlink_eldar',
+    tiktok:    'https://www.tiktok.com/@eldarenergy',
+
     /* Если значение разное по языкам — пишем пару {kk, ru}.
        Если одинаковое (как телефон или почта) — просто строкой. */
     address: {                            // ЗАГЛУШКА: адрес
@@ -73,6 +76,15 @@
   document.querySelectorAll('[data-mail]').forEach(function (el) {
     el.href = 'mailto:' + CONTACTS.email;
     el.textContent = CONTACTS.email;
+  });
+
+  /* Соцсети: data-social="instagram" | "tiktok" */
+  document.querySelectorAll('[data-social]').forEach(function (el) {
+    var url = CONTACTS[el.dataset.social];
+    if (!url) return;
+    el.href = url;
+    el.target = '_blank';
+    el.rel = 'noopener';
   });
 
   /* Кнопки WhatsApp: data-wa="general | standard | mini" */
