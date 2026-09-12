@@ -636,7 +636,11 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
      Блок с описанием и кнопкой WhatsApp остаётся во всю ширину
      (grid-column:1/-1 задан выше, в правиле для 900px). */
   .foot__grid{ grid-template-columns:1fr 1fr; gap:30px 20px; }
-  .foot__bot{ flex-direction:column; }
+  /* Подвал на телефоне был разрежён: 64px сверху и целых 72px между
+     колонками и нижней строкой (46 отступ + 26 после линии). Поджимаем,
+     чтобы реквизиты не уезжали в самый низ страницы. */
+  .foot{ padding-block:44px 24px; }
+  .foot__bot{ flex-direction:column; margin-top:28px; padding-top:20px; }
   /* на телефоне стопка ещё компактнее — экран узкий, места мало */
   .fab{ right:14px; bottom:14px; gap:8px; }
   .fab__btn{ width:42px; height:42px; }
