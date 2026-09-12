@@ -459,9 +459,18 @@
   </div>
 </footer>
 
-<a class="wa-fab" href="#" data-wa="general" aria-label="Написать в WhatsApp">
-  <svg class="ico ico--fill" width="31" height="31"><use href="#i-wa"/></svg>
-</a>
+<!-- Плавающие кнопки связи. WhatsApp внизу — до него удобнее дотянуться большим пальцем -->
+<div class="fab">
+  <a class="fab__btn fab__btn--ig" data-social="instagram" href="#" aria-label="Instagram">
+    <svg class="ico"><use href="#i-instagram"/></svg>
+  </a>
+  <a class="fab__btn fab__btn--tt" data-social="tiktok" href="#" aria-label="TikTok">
+    <svg class="ico ico--fill"><use href="#i-tiktok"/></svg>
+  </a>
+  <a class="fab__btn fab__btn--wa" data-wa="general" href="#" aria-label="WhatsApp">
+    <svg class="ico ico--fill"><use href="#i-wa"/></svg>
+  </a>
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>

@@ -467,17 +467,29 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
   font-size:14px; color:var(--muted);
 }
 
-/* --- 15. Плавающая кнопка WhatsApp ------------------------------------- */
-.wa-fab{
-  position:fixed; right:22px; bottom:22px; z-index:90;
-  display:grid; place-items:center; width:58px; height:58px;
-  background:var(--wa); color:#fff; border-radius:50%;
-  box-shadow:0 6px 22px rgba(0,183,49,.42);
+/* --- 15. Плавающие кнопки связи ----------------------------------------- */
+/* Стопка в правом нижнем углу. Кнопки намеренно небольшие: три штуки
+   в прежнем размере (58px) закрывали бы заметный кусок экрана. */
+.fab{
+  position:fixed; right:18px; bottom:18px; z-index:90;
+  display:flex; flex-direction:column; gap:10px;
+}
+.fab__btn{
+  position:relative; display:grid; place-items:center;
+  width:46px; height:46px; border-radius:50%; color:#fff;
+  box-shadow:0 4px 14px rgba(15,23,32,.22);
   transition:transform .2s ease, box-shadow .2s ease;
 }
-.wa-fab:hover{ transform:scale(1.07); box-shadow:0 8px 28px rgba(0,183,49,.55); }
-.wa-fab svg{ width:31px; height:31px; }
-.wa-fab::after{
+.fab__btn .ico{ width:23px; height:23px; }
+.fab__btn:hover{ transform:scale(1.08); }
+
+.fab__btn--wa{ background:var(--wa); box-shadow:0 4px 16px rgba(0,183,49,.40); }
+.fab__btn--ig{ background:linear-gradient(45deg,#f09433,#dc2743 45%,#bc1888); }
+.fab__btn--tt{ background:#111; }
+
+/* Пульсация только у WhatsApp: он основной способ связи, а три
+   пульсирующих круга рядом были бы навязчивыми */
+.fab__btn--wa::after{
   content:""; position:absolute; inset:0; border-radius:50%;
   border:2px solid var(--wa); animation:ping 2.4s cubic-bezier(0,0,.2,1) infinite;
 }
@@ -635,7 +647,10 @@ h3{ font-size:20px; font-weight:600; line-height:1.35; letter-spacing:-.01em; }
      (grid-column:1/-1 задан выше, в правиле для 900px). */
   .foot__grid{ grid-template-columns:1fr 1fr; gap:30px 20px; }
   .foot__bot{ flex-direction:column; }
-  .wa-fab{ right:16px; bottom:16px; width:54px; height:54px; }
+  /* на телефоне стопка ещё компактнее — экран узкий, места мало */
+  .fab{ right:14px; bottom:14px; gap:8px; }
+  .fab__btn{ width:42px; height:42px; }
+  .fab__btn .ico{ width:21px; height:21px; }
   /* Кнопки на всю ширину. У .btn стоит white-space:nowrap, и длинная подпись
      («Получить бесплатную консультацию» — 421px против 339px доступных)
      вылезала за пределы кнопки. Разрешаем перенос и ужимаем боковые поля:
